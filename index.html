@@ -13,16 +13,17 @@
 <meta name="twitter:card" content="summary_large_image">
 <style>
 :root{
+  --green-title:#1f6f5c;
   --bg:#f7f4ee; --surface:#ffffff; --ink:#1d2622; --muted:#5b6862; --line:#e2ddd2;
   --accent:#1f6f5c; --accent-soft:#e3f0eb; --warm:#b8711c;
 }
 @media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
+  :root:not([data-theme="light"]){ --green-title:#5cc3a6;
     --bg:#121614; --surface:#1b211e; --ink:#e9efec; --muted:#a2b0aa; --line:#2c3531;
     --accent:#5cc3a6; --accent-soft:#1f2f29; --warm:#e3a65a;
   }
 }
-:root[data-theme="dark"]{
+:root[data-theme="dark"]{ --green-title:#5cc3a6;
   --bg:#121614; --surface:#1b211e; --ink:#e9efec; --muted:#a2b0aa; --line:#2c3531;
   --accent:#5cc3a6; --accent-soft:#1f2f29; --warm:#e3a65a;
 }
@@ -45,6 +46,7 @@ h2{font-size:24px;margin:48px 0 18px}
 .card h3{font-size:21px;line-height:1.3;margin:0 0 6px}
 .tag{font-size:13px;color:var(--warm);font-weight:700;margin:0 0 12px}
 .card p{margin:0 0 12px}
+.card p.pain{font-weight:500}
 .card ul{margin:0 0 16px;padding-left:20px}
 .card li{margin-bottom:4px}
 .links{display:flex;flex-wrap:wrap;gap:10px}
@@ -62,34 +64,61 @@ footer a{color:var(--accent)}
   .principles{grid-template-columns:1fr}
   header{padding-top:36px}
 }
+
+/* BL-page look */
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.01em}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.08;margin-bottom:18px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:800;letter-spacing:.14em}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.subtitle{display:block;font-family:"Inter","Segoe UI",system-ui,sans-serif;font-size:clamp(18px,2.4vw,24px);font-weight:700;line-height:1.35;color:var(--green-title);margin:0 0 18px}
+.btn{border-radius:999px;padding:11px 20px}
+header{padding-top:72px;padding-bottom:40px}
+
+
+/* BL hero (copied from OWL BL page) */
+html{overflow-x:clip}
+.bh{position:relative;min-height:650px;display:flex;align-items:center;overflow:hidden;background:#f7f4ee url("assets/owl-bookstore-hero.png") center/cover no-repeat;border-bottom:1px solid rgba(31,36,48,.15);color:#1f2430}
+.bh::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(247,244,238,.98) 0%,rgba(247,244,238,.88) 37%,rgba(247,244,238,.08) 61%,rgba(247,244,238,0) 100%)}
+.bh-shell{width:min(1180px,calc(100% - 40px));margin:0 auto;position:relative;z-index:1;padding:72px 0 82px}
+.bh-copy{width:min(610px,52%)}
+.bh-eyebrow{display:inline-flex;align-items:center;gap:10px;margin:0 0 22px;color:#1f5d3a;font-size:.83rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.bh-eyebrow::before{content:"";width:34px;height:2px;background:#c96f4a}
+.bh h1{margin:0;max-width:700px;font-family:Georgia,"Times New Roman",serif;line-height:1.12;font-size:clamp(3.2rem,7vw,6.7rem);letter-spacing:-.045em;font-weight:600;color:#1f2430}
+.bh-detail{display:block;margin-top:16px;font-family:Inter,ui-sans-serif,sans-serif;font-size:clamp(1.16rem,2.2vw,1.72rem);line-height:1.35;font-weight:720;letter-spacing:-.02em;color:#1f5d3a}
+.bh-lede{max-width:590px;margin:26px 0 0;font-size:1.12rem;color:#424742}
+.bh-chips{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0;padding:0;list-style:none}
+.bh-chips li{background:rgba(255,253,248,.85);border:1px solid rgba(31,36,48,.15);border-radius:999px;padding:5px 13px;font-size:14px}
+.bh-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.bh-button{display:inline-flex;min-height:48px;align-items:center;justify-content:center;gap:9px;padding:11px 20px;border:1px solid #1f2430;border-radius:999px;text-decoration:none;font-weight:760;color:#1f2430;background:rgba(247,244,238,.76)}
+.bh-button.primary{color:#fffdf8;background:#1f2430}
+.bh-button:focus-visible{outline:3px solid #c96f4a;outline-offset:2px}
+@media (max-width:900px){.bh{min-height:700px;background-position:63% center}.bh::after{background:linear-gradient(90deg,rgba(247,244,238,.98) 0%,rgba(247,244,238,.92) 54%,rgba(247,244,238,.22) 100%)}.bh-copy{width:min(620px,78%)}}
+@media (max-width:620px){.bh{min-height:740px;align-items:flex-end;background-position:66% center}.bh::after{background:linear-gradient(180deg,rgba(247,244,238,.12) 0%,rgba(247,244,238,.9) 42%,rgba(247,244,238,.99) 100%)}.bh-shell{width:min(100% - 28px,1180px);padding:170px 0 48px}.bh-copy{width:100%}.bh h1{font-size:clamp(2.6rem,13vw,4rem)}}
 </style>
 </head>
 <body>
+<section class="bh" aria-label="Introduction">
+  <div class="bh-shell"><div class="bh-copy">
+    <p class="bh-eyebrow">Educational content · AI-built tools</p>
+    <h1>Lessons learners can touch, built with AI<span class="bh-detail">Japanese lessons, healthy-eating lessons and a self-care workshop, designed by a former high school teacher</span></h1>
+    <p class="bh-lede">I design short, interactive lessons and build the web tools learners use with an AI coding assistant, always starting from what learners actually want.</p>
+    
+    <div class="bh-actions"><a class="bh-button primary" href="#work">See my work ↓</a></div>
+  </div></div>
+</section>
 <div class="wrap">
-  <header>
-    <p class="eyebrow">Educational content · AI-built tools</p>
-    <h1>Lessons learners can touch, built with AI</h1>
-    <p class="lead">I design short, interactive lessons for children, teens, adults and language learners, and build the web tools they use with an AI coding assistant. A former public high school teacher of food, health and daily life, I start from what learners actually want, not from rules.</p>
-    <ul class="facts">
-      <li>Former public high school teacher</li>
-      <li>Lesson design + AI-built web tools</li>
-      <li>Used in live online classes</li>
-    </ul>
-  </header>
 
   <main>
-    <h2>Selected work</h2>
+    <h2 id="work">Selected work</h2>
 
     <article class="card">
-      <img src="teform.jpg" alt="Lesson tool screen with a museum scene and speaking prompts">
+      <img src="teform.jpg?v=3" alt="Lesson tool screen with a museum scene and speaking prompts">
       <div class="body">
         <h3>Learn the Japanese Te-form for Travel</h3>
         <p class="tag">20 minutes + practice · English-speaking beginners</p>
-        <p>The te-form is a key step for every Japanese learner. This web lesson, built with an AI coding assistant, teaches it through real travel requests (〜てください), and any instructor can teach it the same way on one shared screen.</p>
+        <p class="pain"><b>Beginners freeze when they need to ask for something in Japanese.</b> This web lesson, built with an AI coding assistant, teaches the te-form (a key step in Japanese grammar) through real travel requests (〜てください). Any instructor can teach it the same way on one shared screen.</p>
         <ul>
           <li>Aims for about 70% learner speaking time.</li>
-          <li>Clear prompts and repeated practice with travel situations.</li>
-          <li>Flexible stopping points to fit the class time.</li>
           <li>Japanese checked for naturalness, beginner level and on-screen readability.</li>
         </ul>
         <div class="links">
@@ -99,14 +128,12 @@ footer a{color:var(--accent)}
     </article>
 
     <article class="card">
-      <img src="salt.jpg" alt="Salt tool screen showing a hamburger and Big Mac adding up to 4.1 g">
+      <img src="salt.jpg?v=3" alt="Salt tool screen showing a hamburger and Big Mac adding up to 4.1 g">
       <div class="body">
         <h3>How Much Salt Is in My Favorite Food?</h3>
         <p class="tag">Healthy eating for kids · 30-minute online lesson · elementary &amp; junior high</p>
-        <p>Goal: help kids build eating habits that prevent high blood pressure, by learning how much salt they can have in a day and how much is in the foods they love. It starts from a question kids really ask: “Why won’t adults let me eat fast food three times a day?”</p>
+        <p class="pain"><b>Kids love fast food, but “don’t eat that” never works.</b> Kids add up the salt in their favorite meal, compare it with the daily limit for their age, and learn habits that help prevent high blood pressure. It starts from a question kids really ask: “Why won’t adults let me eat fast food three times a day?”</p>
         <ul>
-          <li>Students pick their dream fast-food dinner and add up the salt in a web tool.</li>
-          <li>They compare it with the daily target for their own age group.</li>
           <li>A 30-second animation shows how extra salt affects blood vessels.</li>
           <li>The lesson ends with “helper foods” to add, not foods to give up.</li>
         </ul>
@@ -119,14 +146,12 @@ footer a{color:var(--accent)}
     </article>
 
     <article class="card">
-      <img src="town.jpg" alt="Tool screen: choosing favorite foods, with chosen likes collected on the right">
+      <img src="town.jpg?v=3" alt="Tool screen: choosing favorite foods, with chosen likes collected on the right">
       <div class="body">
         <h3>A Life That Honors Your Inner Self</h3>
         <p class="tag">Workshop for adults · self-care + AI literacy</p>
-        <p>For adults who never built the habit of taking care of themselves. Goal: explore a way of living that honors your inner self. Learners notice what makes them feel happy all day, turn it into clear conditions, and use AI to explore a life, and a town, built around it. First tried in a mixed-grade online class for students.</p>
+        <p class="pain"><b>Many adults never learned to take care of themselves.</b> Learners notice what makes them feel happy all day, turn it into clear conditions, and use AI to explore a life, and a town, built around it. First tried in a mixed-grade online class for students.</p>
         <ul>
-          <li>Starts with one adult’s real example: likes and dislikes, a talk with AI, and real town suggestions.</li>
-          <li>Learners collect their own likes at their own pace in a web tool.</li>
           <li>AI suggests three towns in Japan and three abroad; the group checks them together.</li>
           <li>No personal info, every answer optional, and AI ideas treated as “candidates, not answers.”</li>
         </ul>
@@ -147,8 +172,7 @@ footer a{color:var(--accent)}
 
   <footer>
     <p>Available for lesson design and AI-built learning tools. Contact me on
-      <a href="https://www.upwork.com/freelancers/~012c5ffbd1cf804052" target="_blank" rel="noopener">Upwork</a> or
-      <a href="https://www.linkedin.com/in/y-yuasa-12744a343/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+      <a href="https://www.upwork.com/freelancers/~012c5ffbd1cf804052" target="_blank" rel="noopener">Upwork</a>.</p>
   </footer>
 </div>
 </body>
