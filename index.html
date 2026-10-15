@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI-Built Learning Materials</title>
+<meta name="description" content="Interactive lessons and web tools for kids and language learners, designed by a former teacher and built with AI.">
+<style>
+:root{
+  --bg:#f7f4ee; --surface:#ffffff; --ink:#1d2622; --muted:#5b6862; --line:#e2ddd2;
+  --accent:#1f6f5c; --accent-soft:#e3f0eb; --warm:#b8711c;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121614; --surface:#1b211e; --ink:#e9efec; --muted:#a2b0aa; --line:#2c3531;
+    --accent:#5cc3a6; --accent-soft:#1f2f29; --warm:#e3a65a;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121614; --surface:#1b211e; --ink:#e9efec; --muted:#a2b0aa; --line:#2c3531;
+  --accent:#5cc3a6; --accent-soft:#1f2f29; --warm:#e3a65a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Inter","Segoe UI",system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  line-height:1.65;font-size:17px}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+header{padding:56px 0 32px}
+.eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 10px}
+h1{font-size:clamp(30px,5vw,46px);line-height:1.15;margin:0 0 16px;letter-spacing:-.01em}
+.lead{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:680px;margin:0}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 0;padding:0;list-style:none}
+.facts li{background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:6px 14px;font-size:14px}
+h2{font-size:24px;margin:48px 0 18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:28px;
+  display:grid;grid-template-columns:1fr 1fr}
+.card img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:16/9}
+.card .body{padding:24px 26px}
+.card h3{font-size:21px;line-height:1.3;margin:0 0 6px}
+.tag{font-size:13px;color:var(--warm);font-weight:700;margin:0 0 12px}
+.card p{margin:0 0 12px}
+.card ul{margin:0 0 16px;padding-left:20px}
+.card li{margin-bottom:4px}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:15px;border-radius:10px;padding:9px 14px;
+  border:1.5px solid var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--surface)}
+.btn:focus-visible{outline:3px solid var(--warm);outline-offset:2px}
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0;margin:0;list-style:none}
+.principles li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.principles b{display:block;margin-bottom:4px}
+footer{border-top:1px solid var(--line);margin-top:56px;padding:28px 0 48px;color:var(--muted);font-size:15px}
+footer a{color:var(--accent)}
+@media (max-width:760px){
+  .card{grid-template-columns:1fr}
+  .principles{grid-template-columns:1fr}
+  header{padding-top:36px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Educational content · AI-built tools</p>
+    <h1>Lessons learners can touch, built with AI</h1>
+    <p class="lead">I design short, interactive lessons for children and language learners, and build the web tools they use with an AI coding assistant. A former public high school teacher of food, health and daily life, I start from what learners actually want, not from rules.</p>
+    <ul class="facts">
+      <li>Former public high school teacher</li>
+      <li>Lesson design + AI-built web tools</li>
+      <li>Used in live online classes</li>
+    </ul>
+  </header>
+
+  <main>
+    <h2>Selected work</h2>
+
+    <article class="card">
+      <img src="salt.jpg" alt="Title slide: Why won't adults let me eat fast food three times a day? – Salt edition">
+      <div class="body">
+        <h3>Salt &amp; Health Lesson for Kids</h3>
+        <p class="tag">30-minute online lesson · mixed grades (elementary &amp; junior high)</p>
+        <p>Built around a question kids really ask: “Why won’t adults let me eat fast food three times a day?”</p>
+        <ul>
+          <li>Students pick their dream fast-food dinner and add up the salt in a web tool.</li>
+          <li>They compare it with the daily target for their own age group.</li>
+          <li>A 30-second animation shows how extra salt affects blood vessels.</li>
+          <li>The lesson ends with “helper foods” to add, not foods to give up.</li>
+        </ul>
+        <div class="links">
+          <a class="btn primary" href="https://tacokurage.github.io/shio-board/" target="_blank" rel="noopener">Try the tool</a>
+          <a class="btn" href="https://tacokurage.github.io/shio-board/kekkan.html" target="_blank" rel="noopener">Watch the animation</a>
+          <a class="btn" href="salt-lesson-slides.pdf" target="_blank" rel="noopener">Slides (PDF)</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="town.jpg" alt="Title slide: How to find a town full of what you love">
+      <div class="body">
+        <h3>Find a Town That Fits What You Love</h3>
+        <p class="tag">Online lesson · mixed grades · AI literacy</p>
+        <p>Students turn vague likes into clear conditions, then use AI to explore towns that fit them.</p>
+        <ul>
+          <li>Starts with one adult’s real example: likes and dislikes, a talk with AI, and real town suggestions.</li>
+          <li>Students collect their own likes at their own pace in a web tool.</li>
+          <li>AI suggests three towns in Japan and three abroad; the class checks them together.</li>
+          <li>No personal info, every answer optional, and AI ideas treated as “candidates, not answers.”</li>
+        </ul>
+        <div class="links">
+          <a class="btn primary" href="https://suki-tanken-class.reietureietu2016.chatgpt.site" target="_blank" rel="noopener">Try the tool</a>
+          <a class="btn" href="town-lesson-slides.pdf" target="_blank" rel="noopener">Slides (PDF)</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="teform.jpg" alt="Lesson screen: Japanese greeting with English translation">
+      <div class="body">
+        <h3>Interactive Japanese Lesson: Te-form for Travel</h3>
+        <p class="tag">20 minutes + practice · English-speaking beginners</p>
+        <p>A ready-to-use lesson that different instructors can teach the same way, on one shared screen.</p>
+        <ul>
+          <li>Aims for about 70% learner speaking time.</li>
+          <li>Clear prompts and repeated practice with travel situations.</li>
+          <li>Flexible stopping points to fit the class time.</li>
+          <li>Japanese checked for naturalness, beginner level and on-screen readability.</li>
+        </ul>
+        <div class="links">
+          <a class="btn primary" href="https://owl-travel-te-form-lesson.reietureietu2016.chatgpt.site" target="_blank" rel="noopener">Open the lesson</a>
+        </div>
+      </div>
+    </article>
+
+    <h2>How I design</h2>
+    <ul class="principles">
+      <li><b>Start from desire</b>Lessons begin with what learners already want, so they lean in instead of being told.</li>
+      <li><b>Hands on, own pace</b>Each lesson has a tool students can use themselves, at their own speed.</li>
+      <li><b>Safe by design</b>No personal data, optional answers, and AI used as a helper, not an authority.</li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>Available for lesson design and AI-built learning tools. Contact me on
+      <a href="https://www.upwork.com/freelancers/~012c5ffbd1cf804052" target="_blank" rel="noopener">Upwork</a> or
+      <a href="https://www.linkedin.com/in/y-yuasa-12744a343/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+  </footer>
+</div>
+</body>
+</html>
